@@ -4,7 +4,7 @@ pipeline {
   stages{
     stage('clone') {
       steps{
-        git branch: $'{params.branchname}', credentialsId: '6b1baf77-393c-4cd1-98f2-d7d98b689caf', url: 'https://github.com/sandeepthukran/demopipeline'
+        git branch: "${params.branchname}", credentialsId: '6b1baf77-393c-4cd1-98f2-d7d98b689caf', url: 'https://github.com/sandeepthukran/demopipeline'
         echo 'selected the branch ${params.branchname} done'
       }
     }
