@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  properties([pipelineTriggers([githubPush()])])
+  properties([parameters([choice(choices: ['master', 'main', 'dev'], description: 'choose the build branch', name: 'branch name')]), pipelineTriggers([githubPush()])])
   stages{
     stage('clone') {
       steps{
