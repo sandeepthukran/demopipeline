@@ -1,6 +1,7 @@
 pipeline {
   agent any
-  properties([parameters([choice(choices: 'master \n main \n dev', description: 'choose the build branch', name: 'branchname')])
+  parameters {choice(choices: 'master \n main \n dev', description: 'choose the build branch', name: 'branchname')
+             }
   stages{
     stage('clone') {
       steps{
